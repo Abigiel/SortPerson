@@ -36,18 +36,13 @@ public class Person implements Comparable{
         this.age = age;
     }
 
- //   @Override
-//    public int compareTo(Person p) {
-//        int compare = a.compareTo(b);
-//
-//        if (compare < 0) {
-//            //a is smaller
-//        }
-//        else if (compare > 0) {
-//            //a is larger
-//        }
-//        else {
-//            //a is equal to b
-//        }
-//    }
-//}
+    @Override
+    public int compareTo(Object o) {
+        if(o instanceof Person){
+            Person p =(Person) o;
+            return this.lastName.compareTo(p.lastName);
+        }
+        return 0;
+    }
+}
+
